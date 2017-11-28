@@ -1,0 +1,30 @@
+.login-background {
+  background: #666 url('./img/loginBCK.jpg') no-repeat center;
+  background-size:cover;
+  height: 100%;
+}
+
+.saveButton {
+  color:yellow;
+}
+
+.login-form-center {
+  width: 350px;
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  border-radius: 3px !important;
+  background: rgba(255,255,255,0.7);
+}
+.login-form {
+  margin: 0px 30px 30px 30px;
+}
+.login-form-button {
+  width: 100%;
+}
+.login-form-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 16px;
+}
