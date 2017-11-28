@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "set NODE_ENV=dev && webpack-dev-server --inline",
     "start": "set NODE_ENV=dev && node serve.js",
-    "build": "set NODE_ENV=prod && webpack --progress --hide-modules"
+    "build": "set NODE_ENV=prod && webpack --progress --hide-modules",
+    "other": "better-npm-run start-dev",
+    "otherbuild": "better-npm-run start-build"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +25,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "better-npm-run": "^0.1.0",
     "clean-webpack-plugin": "^0.1.17",
+    "concurrently": "^3.5.1",
     "css": "^2.2.1",
     "css-loader": "^0.28.7",
     "echarts": "^3.7.2",
@@ -67,5 +71,19 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
+  },
+  "betterScripts": {
+    "start-dev":{
+      "command":"node serve.js",
+      "env":{
+        "NODE_ENV":"dev"
+      }
+    },
+    "start-build":{
+      "command":"webpack --progress --hide-modules",
+      "env":{
+        "NODE_ENV":"prod"
+      }
+    }
   }
 }
