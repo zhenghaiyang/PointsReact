@@ -49,7 +49,7 @@ export default class Login extends React.Component{
 
   render(){
     console.log("LoginLoginLoginLogin");
-    console.log(this.props)
+    console.log(this.props.children)
     console.log("LoginLoginLoginLogin");
     const { getFieldDecorator } = this.props.form;
     return(

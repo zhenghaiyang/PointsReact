@@ -2,8 +2,6 @@ var webpack = require('webpack');
 var express = require('express');
 const webpackDevMiddleware = require("webpack-dev-middleware");
 const webpackHotMiddleware = require("webpack-hot-middleware");
-console.log("-------")
-console.log(process.env.NODE_ENV)
 const env = process.env.NODE_ENV.replace(/(\s*$)|(^\s*)/ig,"");
 const config = require(`./webpack.${env}.js`);
 var app = express();
@@ -17,6 +15,7 @@ app.use(webpackDevMiddleware(compiler, {
 	inline: true,
 	progress: false,
 	quiet: false,
+	noInfo: true,
 	stats: {
 		colors: true,
 	}
