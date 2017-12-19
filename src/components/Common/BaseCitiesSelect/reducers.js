@@ -21,5 +21,5 @@ export function getAllProvince(){
     payload:cFetch(`http://api.digitization.gagogroup.cn/api/districts/provinces`)
   }
 }
-// 获取子集的行政区划
-export function getChildren
+// // 获取子集的行政区划
+// export function getChildren

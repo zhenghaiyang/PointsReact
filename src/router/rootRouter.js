@@ -5,20 +5,10 @@ import {
   NotFountPage
 } from '../components'
 
-// import asyncComponent from '../testContainer/AsyncComponent';
-// import {
-//   testOne
-// } from '../testContainer';
-//
-//  console.log("route")
-// // console.log(testOne)
-// // console.log(Login)
-// // const applyDeposit = asyncComponent(() => import("../testContainer/testOne/testOne"))
-// import testOne from '../testContainer/testOne/testOne'
-// console.log(testOne)
-import Login from '../containers/Login/Login';
+import Login from '../containers/Login/Login'; // 登录
 import App from '../containers/App/App';
 import TestComponent from '../containers/TestComponent/TestComponent';
+import Home from '../containers/Home/Home'; // 主页
 import {
   Closed
 } from '../components';
@@ -28,7 +18,7 @@ export default class RootRouter extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Login}/>
+          <Route exact path="/" component={Home}/>
           <App  path="/home" >
               <Route  path="/home/closed" component={Closed}/>
           </App>

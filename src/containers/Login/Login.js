@@ -17,34 +17,12 @@ export default class Login extends React.Component{
   constructor(props){
     super(props);
     this.handleLogin=this.handleLogin.bind(this);
-    this.handleFetch= this.handleFetch.bind(this);
-    this.handleajax = this.handleajax.bind(this)
   }
 
   handleLogin() {
     window.location.href="/home"
   }
 
-  handleFetch() {
-    // let myHeaders = new Headers({
-    //   "accept": "application/json",
-    //   "Content-Type": "application/json",
-    // });
-
-    fetch("http://172.16.177.148:3000/api/statistics?userId=29ac6ff4-6b12-430f-a163-a4e9651c14c1&code=150400%2C150421&unitCode=0",{
-      method:'GET',
-      headers:{
-        "accept": "application/json",
-        "Content-Type": "application/json",
-      }
-    })
-  }
-
-  handleajax() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET","http://172.16.177.148:3000/api/statistics?userId=29ac6ff4-6b12-430f-a163-a4e9651c14c1&code=150400%2C150421&unitCode=0");
-    xhr.send();
-  }
 
 
   render(){
@@ -79,10 +57,6 @@ export default class Login extends React.Component{
                登录
              </Button>
             </div>
-          </div>
-          <div>
-            <button onClick={this.handleFetch}>fetch</button>
-            <button onClick={this.handleajax}>ajax</button>
           </div>
         </div>
     )

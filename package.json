@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "set NODE_ENV=dev && webpack-dev-server --inline",
-    "start": "set NODE_ENV=dev && node serve.js",
-    "build": "set NODE_ENV=prod && webpack --progress --hide-modules",
-    "other": "better-npm-run start-dev",
-    "otherbuild": "better-npm-run start-build"
+    "dev": "better-npm-run start-dev",
+    "build": "better-npm-run start-build"
   },
   "author": "",
   "license": "ISC",
@@ -63,7 +60,7 @@
     "webpack-server": "^0.1.2"
   },
   "dependencies": {
-    "antd": "^2.13.7",
+    "antd": "^3.0.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
@@ -73,16 +70,16 @@
     "redux-thunk": "^2.2.0"
   },
   "betterScripts": {
-    "start-dev":{
-      "command":"node serve.js",
-      "env":{
-        "NODE_ENV":"dev"
+    "start-dev": {
+      "command": "node serve.js",
+      "env": {
+        "NODE_ENV": "dev"
       }
     },
-    "start-build":{
-      "command":"webpack --progress --hide-modules",
-      "env":{
-        "NODE_ENV":"prod"
+    "start-build": {
+      "command": "webpack --progress --hide-modules",
+      "env": {
+        "NODE_ENV": "prod"
       }
     }
   }
