@@ -54,11 +54,11 @@ var config ={
       },
       {
         test:/\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
-        use: ['file-loader?limit=1000&name=files/[md5:hash:base64:10].[ext]']
+        use: ['file-loader?limit=1000&name=image/[md5:hash:base64:10].[ext]']
       },
       {
         test: /\.(woff|eot|ttf|svg|gif)$/,
-        use:['file-loader?limit=1000&name=files/[md5:hash:base64:10].[ext]']
+        use:['file-loader?limit=1000&name=image/[md5:hash:base64:10].[ext]']
       }
     ]
   },

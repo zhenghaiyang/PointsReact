@@ -52,6 +52,22 @@ const menu =[
         linkto:"33424"
       }
     ]
+  },
+  {
+    name:"人员管理2",
+    id:"22",
+    key:"22",
+    children:[
+      {
+        name:"用户管理",
+        key:"2-21",
+        id:"2-21"
+      },{
+        name:"权限管理",
+        key:"2-22",
+        id:"2-22"
+      }
+    ]
   }
 ]
 
@@ -61,7 +77,33 @@ export default class Menus extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    debugger;
+    console.log("componentWillMount",this.props)
+  }
+
+
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    console.log("componentWillReceiveProps",nextProps)
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    debugger;
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    debugger;
+    console.log(nextProps)
+    console.log(nextState)
+  }
+
+
   render() {
+    debugger;
+    console.log(this.props)
+    console.log("333333333")
     return (
       <Menu
           mode="inline"

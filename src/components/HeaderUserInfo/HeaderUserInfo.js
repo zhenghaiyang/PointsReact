@@ -16,6 +16,7 @@ export default class HeaderUserInfo extends React.Component {
   }
 
   render() {
+    console.log("4444444444")
     return (
       <div>
         <span className="header-user-info-bell">
