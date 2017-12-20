@@ -1,10 +1,17 @@
 import React,{ Component } from 'react';
-import { Layout,Icon,Input,Popover } from 'antd';
+import { Layout,Icon,Input,Popover,BackTop  } from 'antd';
 import './Home.less';
 import {
   BaseCarousel,
-  HomeMenu
+  HomeMenu,
 } from '../../components';
+import {
+  HomeStrategy,
+  HomeScenery,
+  HomeToday,
+  HomeFood,
+  HomeADimage
+} from '../../containers';
 const { Header, Content, Footer } = Layout;
 
 
@@ -87,6 +94,285 @@ const content = (
   </div>
 )
 
+const imageList =[
+  {
+    type:'1', // 1 美食 , 2 景色 ,3 游记
+    typename:"美食",
+    imgurl:require("../../../static/image/today/food3.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'1', // 1 美食 , 2 景色 ,3 游记
+    typename:"美食",
+    imgurl:require("../../../static/image/today/food2.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'2', // 1 美食 , 2 景色 ,3 游记
+    typename:"景色",
+    imgurl:require("../../../static/image/today/scenery3.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'2', // 1 美食 , 2 景色 ,3 游记
+    typename:"景色",
+    imgurl:require("../../../static/image/today/scenery4.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'1', // 1 美食 , 2 景色 ,3 游记
+    typename:"美食",
+    imgurl:require("../../../static/image/today/food1.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'3', // 1 美食 , 2 景色 ,3 游记
+    typename:"游记",
+    imgurl:require("../../../static/image/today/note1.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'3', // 1 美食 , 2 景色 ,3 游记
+    typename:"游记",
+    imgurl:require("../../../static/image/today/note2.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:'2', // 1 美食 , 2 景色 ,3 游记
+    typename:"景色",
+    imgurl:require("../../../static/image/today/scenery8.jpg"),
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"开封", // 城市
+      message:"中原特色,中原一绝,流连忘返,"
+    }
+  }
+]
+
+const scenerylist =[
+  {
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/1.jpeg"),
+    isLeft:true,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.1.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.2.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.3.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/3.jpeg"),
+    isLeft:false,
+    isRight:true,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  }
+]
+
+const strategtlist =[
+  {
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/1.jpeg"),
+    isLeft:true,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.1.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.2.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.3.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/3.jpeg"),
+    isLeft:false,
+    isRight:true,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  }
+]
+
+const foodlist =[
+  {
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/1.jpeg"),
+    isLeft:true,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.1.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.2.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.3.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+    isLeft:false,
+    isRight:false,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  },{
+    type:"2", // 1 美食 2 景色 3 游记
+    imgurl:require("../../../static/image/scenery/3.jpeg"),
+    isLeft:false,
+    isRight:true,
+    info:{
+      looknumber:128764, // 多少人看过
+      province:"郑州", // 城市
+      message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+    }
+  }
+]
+
+const adImagelist=[
+  {
+    name:"滴滴打车广告",
+    path:"https://pic.qyer.com/ra/img/15129830654467"
+  },{
+    name:"饿了么广告",
+    path:require("../../../static/image/AD/elm2.jpg"),
+  }
+]
+
+
 export default class Home extends Component {
 
   constructor(props) {
@@ -95,8 +381,8 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Layout>
-        <div style={{height:'527px'}}>
+      <Layout style={{background:"#fff"}}>
+        <div style={{height:'527px',width:'100%'}}>
           <Header className="p-header">
             <div className="p-header-nav-wrapper">
               <div className="p-header-logo">
@@ -130,12 +416,49 @@ export default class Home extends Component {
             imgurl={imgurl}
           />
         </div>
-        <Content style={{height:'500px'}}>
+        <div className="home-left-today">
+          <HomeToday
+            imageList={imageList}
+          />
+        </div>
+        <div className="home-center">
+              <HomeADimage
+                adImagelist={adImagelist}
+              />
+        </div>
+        <Content style={{background:'#fff'}}>
+          <div className="home-page-warp">
+            <div className="home-left-content">
+              <div className="home-left">
+                {/*景色*/}
+                <div className="home-page-tabs">
+                  <HomeScenery
+                    scenerylist={scenerylist}
+                  />
+                </div>
+                {/*美食*/}
+                <div className="home-page-tabs">
+                  <HomeFood
+                    foodlist={foodlist}
+                  />
+                </div>
+                {/*旅游游记*/}
+                <div className="home-page-tabs">
+                  <HomeStrategy
+                    strategtlist={strategtlist}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="home-right-content">
 
+            </div>
+          </div>
         </Content>
         <Footer>
 
         </Footer>
+        <BackTop />
       </Layout>
     )
   }
