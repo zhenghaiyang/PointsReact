@@ -1,0 +1,71 @@
+.homeaboutme-content {
+  height: 200px;
+  margin-bottom: 10px;
+}
+.homeaboutme-content::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #25a851;
+  background: -webkit-gradient(linear,left top,right top,color-stop(0,#25a851),to(#3ec969));
+  background: -o-linear-gradient(left,#25a851 0,#3ec969);
+  background: linear-gradient(90deg,#25a851,#3ec969);
+}
+.homeaboutme-wrap {
+  margin: 0 auto;
+  padding: 30px 20px 30px 20px;
+  width: 950px;
+  height: 200px;
+  ul li {
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+    dl {
+      position: relative;
+      padding-left: 18px;
+      width: 137px;
+      font-size: 14px;
+      line-height: 24px;
+      .homeaboutme-QRcode {
+        width: 119px;
+        height: 119px;
+      }
+      dt {
+        padding-bottom: 10px;
+        font-weight: 700;
+        color: silver;
+      }
+    }
+    dl::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 3px;
+      height: 16px;
+      background: #2aaf55;
+      background: -webkit-gradient(linear,left top,right top,color-stop(0,#2aaf55),to(#39c264));
+      background: -o-linear-gradient(left,#2aaf55 0,#39c264);
+      background: linear-gradient(90deg,#2aaf55 0,#39c264);
+    }
+  }
+}
+
+.aboutme-font {
+  color: #959595;
+  cursor: pointer;
+}
+.aboutme-font:hover {
+  color: silver;
+  cursor: pointer;
+}
+
+.aboutme-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.aboutme-icon:hover {
+  font-size: 20px;
+  color:#40a9ff;
+  cursor: pointer;
+}

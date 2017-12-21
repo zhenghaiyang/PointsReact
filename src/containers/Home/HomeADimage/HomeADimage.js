@@ -17,7 +17,7 @@ export default class HomeADimage extends PureComponent {
           adImagelist && adImagelist.map((data,index)=>{
             let classname= index==0 ? "ad-left-image" : "ad-right-image"
             return (
-              <div className={classname}>
+              <div className={classname} key={index}>
                 <img src={data.path} alt={data.name} className="ad-image"/>
               </div>
             )

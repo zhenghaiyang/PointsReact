@@ -3,14 +3,17 @@ import { Layout,Icon,Input,Popover,BackTop  } from 'antd';
 import './Home.less';
 import {
   BaseCarousel,
-  HomeMenu,
 } from '../../components';
 import {
   HomeStrategy,
   HomeScenery,
   HomeToday,
   HomeFood,
-  HomeADimage
+  HomeADimage,
+  HomeRight,
+  HomeMenu,
+  HomeFoot,
+  HomeAboutMe
 } from '../../containers';
 const { Header, Content, Footer } = Layout;
 
@@ -372,6 +375,225 @@ const adImagelist=[
   }
 ]
 
+const rightAD = [
+  {
+    title:"美食排行",
+    data:[
+      {
+        type:"1",
+        imgurl:require("../../../static/image/scenery/3.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"1",
+        imgurl:require("../../../static/image/scenery/3.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"1",
+        imgurl:require("../../../static/image/scenery/3.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"1",
+        imgurl:require("../../../static/image/scenery/3.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"1",
+        imgurl:require("../../../static/image/scenery/3.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      }
+    ]
+  },{
+    title:"景点排行",
+    data:[
+      {
+        type:"2", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"2", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"2", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"2", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"2", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      }
+    ]
+  },{
+    title:"热门评论",
+    data:[
+      {
+        type:"3", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"3", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"3", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"3", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },{
+        type:"3", // 1 美食 2 景色 3 游记
+        imgurl:require("../../../static/image/scenery/2.4.jpeg"),
+        info:{
+          looknumber:128764, // 多少人看过
+          province:"郑州", // 城市
+          synopsis:"这是简介这是简介这是简介",
+          message:"中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返中原特色,中原一绝,流连忘返,"
+        }
+      },
+    ]
+  }
+]
+
+const footData = {
+  logoPath:require("../../../static/image/logo_20170124.png"),
+  rightImagPath:require("../../../static/image/chengxin.png"),
+  centerFontTop:"2017-2030 © XX网® qyer.com All rights reserved. Version v1.00  京公网安备11010102231342  京ICP证666666号 营业执照 经营许可证",
+  centerFontBottom:"这是网站简介简介这是网站简介简介这是网站简介简介这是网站简介简介这是网站简介简介这是网站简介简介这是网站简介简介",
+  friendsLink:[
+    {
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    },{
+      name:"交通查询",
+      path:"http://www.juzigo.com",
+    }
+  ]
+}
+
+const aboutme = {
+  logoPath:require("../../../static/image/QRcode.jpg"),
+}
+
 
 export default class Home extends Component {
 
@@ -448,15 +670,28 @@ export default class Home extends Component {
                     strategtlist={strategtlist}
                   />
                 </div>
+                <div className="home-page-aboutme">
+                  <HomeAboutMe
+                    datasource={aboutme}
+                  />
+                </div>
               </div>
             </div>
             <div className="home-right-content">
-
+              {
+                rightAD && rightAD.map((data,index)=>{
+                  return (
+                    <HomeRight datasource={data} key={index}/>
+                  )
+                })
+              }
             </div>
           </div>
         </Content>
-        <Footer>
-
+        <Footer style={{background:"#242424"}}>
+          <HomeFoot
+            datasource={footData}
+          />
         </Footer>
         <BackTop />
       </Layout>
