@@ -35,7 +35,7 @@ export default class Login extends React.Component{
           <div className="login-form-center">
             <div className="login-form">
               <div className="login-form-title">
-                多 点 点 网 游 订 单 管 理 系 统
+                后 台 管 理 
               </div>
               <Form>
                 <FormItem>

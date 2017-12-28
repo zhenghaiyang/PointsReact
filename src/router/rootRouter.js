@@ -1,17 +1,37 @@
 import React,{ Component } from 'react';
 import {BrowserRouter as Router,Redirect} from 'react-router-dom';
-import { Switch,Route } from 'react-router'
+import { Switch,Route } from 'react-router';
+import Bundle from './Bundle';
 import {
-  NotFountPage
+  NotFountPage,
+  Closed
 } from '../components'
 
-import Login from '../containers/Login/Login'; // 登录
-import App from '../containers/App/App';
+//import Login from '../containers/Login/Login'; // 登录
+//import App from '../containers/App/App';
 import TestComponent from '../containers/TestComponent/TestComponent';
-import Home from '../containers/Home/Home'; // 主页
-import {
-  Closed
-} from '../components';
+//import Home from '../containers/Home/Home'; // 主页
+
+// 懒加载模式
+const Home = (props) => (
+    <Bundle load={() => import('../containers/Home/Home')}>
+        {(Home) => <Home {...props}/>}
+    </Bundle>
+);
+
+const Login = (props) => (
+    <Bundle load={() => import('../containers/Login/Login')}>
+        {(Login) => <Login {...props}/>}
+    </Bundle>
+);
+
+const App = (props) => (
+    <Bundle load={() => import('../containers/App/App')}>
+        {(App) => <App {...props}/>}
+    </Bundle>
+);
+
+
 
 export default class RootRouter extends React.Component {
   render() {
@@ -19,6 +39,7 @@ export default class RootRouter extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/login" component={Login}/>
           <App  path="/home" >
               <Route  path="/home/closed" component={Closed}/>
           </App>

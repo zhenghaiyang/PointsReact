@@ -18,22 +18,28 @@ import {
 const { Header, Content, Footer } = Layout;
 
 
+// const imgurl=[
+//   {
+//     name:"第一次旅行",
+//     url:require("../../../static/image/1.jpg")
+//   },{
+//     name:"第二次旅行",
+//     url:require("../../../static/image/2.jpg")
+//   },{
+//     name:"第三次旅行",
+//     url:require("../../../static/image/3.jpg")
+//   },{
+//     name:"第四次旅行",
+//     url:require("../../../static/image/4.jpg")
+//   },{
+//     name:"第五次旅行",
+//     url:require("../../../static/image/5.jpg")
+//   }
+// ]
 const imgurl=[
   {
     name:"第一次旅行",
     url:require("../../../static/image/1.jpg")
-  },{
-    name:"第二次旅行",
-    url:require("../../../static/image/2.jpg")
-  },{
-    name:"第三次旅行",
-    url:require("../../../static/image/3.jpg")
-  },{
-    name:"第四次旅行",
-    url:require("../../../static/image/4.jpg")
-  },{
-    name:"第五次旅行",
-    url:require("../../../static/image/5.jpg")
   }
 ]
 
@@ -629,7 +635,7 @@ export default class Home extends Component {
                     <Icon type="wechat" className="p-header-login-icon-span"/>
                   </Popover>
                   <a href="/">注册</a>
-                  <a href="/">登录</a>
+                  <a href="/login">登录</a>
                 </div>
               </div>
             </div>

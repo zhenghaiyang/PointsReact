@@ -9,10 +9,14 @@ export default class HeaderUserInfo extends React.Component {
   constructor(props) {
     super(props);
     this.handleGoUserInfo=this.handleGoUserInfo.bind(this);
+    this.goOut=this.goOut.bind(this);
   }
 
   handleGoUserInfo() {
     window.location.href="/userinfo"
+  }
+  goOut() {
+    window.location.href="/"
   }
 
   render() {
@@ -30,7 +34,7 @@ export default class HeaderUserInfo extends React.Component {
         <span onClick={this.handleGoUserInfo} className="header-user-info-name">
           王金超
         </span>
-        <span className="header-user-info-out">
+        <span className="header-user-info-out" onClick={this.goOut}>
           退出
         </span>
       </div>

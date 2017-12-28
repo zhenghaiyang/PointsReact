@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'); //css单独打�
 var HtmlWebpackPlugin = require('html-webpack-plugin'); //生成html
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-
+console.log(path.join(__dirname,'build'))
 
 var config ={
   //devtool:'source-map',
@@ -13,15 +13,18 @@ var config ={
     app:'./src/index.js',
     vendor: [
       'react',
-      'react-dom'
+      'react-dom',
+      'antd'
     ]//分离第三方库
   },
   // 出口文件
   output:{
     publicPath:"./",
     path:path.join(__dirname,'build'),
-    filename: "[name].js",
-    chunkFilename: "[name].[chunkhash:5].js"
+    // filename: "[name].js",
+    // chunkFilename: "[name].[chunkhash:5].js",
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name]-[id].[chunkhash:5].chunk.js',
   },
   module:{
     rules:[
@@ -30,21 +33,6 @@ var config ={
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader'],
       },
-      // {
-      //   test: /\.css$/,
-      //   exclude: /node_modules/,
-      //   use:ExtractTextPlugin.extract({
-      //     fallback: "style-loader",
-      //     use: ['css-loader?minimize=true&modules&localIdentName=[local]-[hash:base64:5]', 'postcss-loader']
-      //   })
-      // },
-      // {
-      //   test: /\.less$/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: 'style-loader',
-      //     use: ['css-loader?minimize=true&modules&localIdentName=[local]-[hash:base64:5]', 'postcss-loader', 'less-loader']
-      //   })
-      // },
       {
         test: /\.(less|css)$/,
         use: ExtractTextPlugin.extract({
@@ -57,7 +45,7 @@ var config ={
         use: ['file-loader?limit=1000&name=image/[md5:hash:base64:10].[ext]']
       },
       {
-        test: /\.(woff|eot|ttf|svg|gif)$/,
+        test: /\.(woff|eot|ttf|svg)$/,
         use:['file-loader?limit=1000&name=image/[md5:hash:base64:10].[ext]']
       }
     ]
@@ -69,7 +57,7 @@ var config ={
           }
       }),
       new ExtractTextPlugin({
-          filename: 'app.css'
+          filename: 'css/app.css'
       }),//提取css文件
       new webpack.optimize.CommonsChunkPlugin({
         names: ['vendor', 'manifest'] // 指定公共 bundle 的名字,加manifest防止vendor的hash值改变。
@@ -88,6 +76,9 @@ var config ={
           warnings: false,
           drop_debugger: true,
           drop_console: true
+        },
+        output: {
+          comments: false,
         }
       }),
       new webpack.LoaderOptionsPlugin({
