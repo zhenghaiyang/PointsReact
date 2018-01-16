@@ -23,3 +23,12 @@ export function login(){
     payload:cFetch("http://api.digitization.gagogroup.cn/api/codelist2",{methos:"GET"})
   }
 }
+
+
+// 测试 fetchResult
+export function testFetch() {
+  return {
+    type:LOGIN_TYPE,
+    payload:cFetch("http://127.0.0.1:8000/users/testGet",{methos:"GET"})
+  }
+}

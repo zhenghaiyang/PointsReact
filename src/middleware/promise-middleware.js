@@ -1,5 +1,5 @@
 import isPromise from './isPromise';
-import { message } from 'antd';
+// import { message } from 'antd';
 const defaultTypes = ['PENDING', 'FULFILLED', 'REJECTED'];
 // https://github.com/pburtchaell/redux-promise-middleware
 /**
@@ -89,13 +89,7 @@ export default function promiseMiddleware(config = {}) {
       const handleReject = (reason = null) => {
         const rejectedAction = getAction(reason, true);
         dispatch(rejectedAction);
-        // let error = new Error();
-        // error.reason = reason;
-        // error.action = rejectedAction;
-        // console.log("=========================")
-        // console.log(reason)
-        // console.log(rejectedAction)
-        message.error("出错了,服务器或网络原因!")
+        // message.error("出错了,服务器或网络原因!")
         //throw error;
         throw rejectedAction;
       };
