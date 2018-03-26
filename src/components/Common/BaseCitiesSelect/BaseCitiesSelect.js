@@ -69,7 +69,7 @@ export default class BaseCitiesSelect extends Component {
     this.setState({
       activeKey:"city"
     })
-    console.log(provinceinfo)
+    //console.log(provinceinfo)
   }
 
   // Tabs 页面切换
@@ -77,14 +77,14 @@ export default class BaseCitiesSelect extends Component {
     this.setState({
       activeKey:key
     })
-    console.log(key)
+    //console.log(key)
   }
 
 
   render() {
-    console.log("baseCitiesSelectData")
-    console.log(this.props)
-    console.log("baseCitiesSelectData")
+    // console.log("baseCitiesSelectData")
+    // console.log(this.props)
+    // console.log("baseCitiesSelectData")
     const suffix= this.state.inputStaus ? <Icon type="down" /> : <Icon type="left" />
     return (
       <div style={{width:'400px'}}>

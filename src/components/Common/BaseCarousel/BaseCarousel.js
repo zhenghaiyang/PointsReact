@@ -9,7 +9,7 @@ export default class BaseCarousel extends Component {
   }
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     let imgUrl=this.props.imgurl;
     return (
       <Carousel

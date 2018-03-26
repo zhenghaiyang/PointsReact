@@ -2,14 +2,19 @@ import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as loginActions from '../../reducers/Login';
+import loginReselect from '../../reselect/LoginReselect';
+// import { selectLoginReducer } from '../../reducers/Login';
 import { Button,Form, Icon, Input } from 'antd';
 import "./Login.css";
 const FormItem = Form.Item;
 @connect(
   state => ({
-    loginReducer:state.loginReducer
+    //loginReducer:state.loginReducer,
+    loginReducer:loginReselect(state),
+    router:state.routing
   }),
-  dispatch => bindActionCreators({...loginActions}, dispatch)
+//  dispatch => bindActionCreators({...loginActions}, dispatch)
+  dispatch => ({...loginActions})
 )
 @Form.create()
 export default class Login extends React.Component{
@@ -18,6 +23,7 @@ export default class Login extends React.Component{
     super(props);
     this.handleLogin=this.handleLogin.bind(this);
     this.handletestOnclick=this.handletestOnclick.bind(this);
+    this.handletestOnclickT=this.handletestOnclickT.bind(this);
   }
 
   handleLogin() {
@@ -25,7 +31,7 @@ export default class Login extends React.Component{
   }
 
   handletestOnclick() {
-     this.props.testFetch();
+     //this.props.testFetch();
     // fetch("http://127.0.0.1:8000/users/testGet1",{
     //   method:'GET',
     // })
@@ -46,17 +52,29 @@ export default class Login extends React.Component{
     //   console.log(err)
     //   console.log("333333333333")
     // })
+    this.props.testReselect()
+
+  }
+
+  handletestOnclickT() {
+    debugger;
+    this.props.testReselectT()
+  }
+
+  componentDidMount() {
+    console.log(this.props.router)
   }
 
 
   render(){
     console.log("LoginLoginLoginLogin");
-    console.log(this.props.children)
+    console.log(this.props)
     console.log("LoginLoginLoginLogin");
     const { getFieldDecorator } = this.props.form;
     return(
         <div className="login-background">
-          <button onClick={this.handletestOnclick}>按钮</button>
+          <button onClick={this.handletestOnclick}>按钮1</button>
+          <button onClick={this.handletestOnclickT}>按钮2</button>
           <div className="login-form-center">
             <div className="login-form">
               <div className="login-form-title">

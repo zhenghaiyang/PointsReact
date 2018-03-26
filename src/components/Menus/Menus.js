@@ -16,7 +16,7 @@ const menu =[
         name:"已开始的订单",
         key:"1-1",
         id:"1-1",
-        linkto:"/aaaa"
+        linkto:"/home/open"
       },{
         name:"未开始的订单",
         key:"1-2",
@@ -79,13 +79,13 @@ export default class Menus extends React.Component {
 
   componentWillMount() {
     debugger;
-    console.log("componentWillMount",this.props)
+    //console.log("componentWillMount",this.props)
   }
 
 
   componentWillReceiveProps(nextProps) {
     debugger;
-    console.log("componentWillReceiveProps",nextProps)
+    //console.log("componentWillReceiveProps",nextProps)
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -95,15 +95,15 @@ export default class Menus extends React.Component {
 
   componentWillUpdate(nextProps, nextState) {
     debugger;
-    console.log(nextProps)
-    console.log(nextState)
+    // console.log(nextProps)
+    // console.log(nextState)
   }
 
 
   render() {
     debugger;
-    console.log(this.props)
-    console.log("333333333")
+    // console.log(this.props)
+    // console.log("333333333")
     return (
       <Menu
           mode="inline"

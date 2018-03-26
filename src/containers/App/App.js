@@ -15,7 +15,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <Layout className="layout-center">
         <Sider width="256px" className="layout-center-sider">

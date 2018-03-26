@@ -5,6 +5,7 @@ import {
 	routerReducer
 } from 'react-router-redux';
 
+// import loginReducer from './Login';
 import loginReducer from './Login';
 import baseCitiesSelectData from '../components/Common/BaseCitiesSelect/reducers';
 

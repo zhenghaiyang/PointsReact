@@ -32,7 +32,9 @@ export default class Closed extends React.Component {
     return (
       <div>
         <div>
-          <BaseSearch/>
+          <BaseSearch
+            
+          />
         </div>
         <div style={{marginTop:"30px"}}>
           <Table

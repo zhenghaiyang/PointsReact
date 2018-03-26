@@ -4,7 +4,8 @@ import { Switch,Route } from 'react-router';
 import Bundle from './Bundle';
 import {
   NotFountPage,
-  Closed
+  Closed,
+  Test
 } from '../components'
 
 //import Login from '../containers/Login/Login'; // 登录
@@ -38,10 +39,11 @@ export default class RootRouter extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home}/>
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login}/>
           <App  path="/home" >
               <Route  path="/home/closed" component={Closed}/>
+              <Route  path="/home/open" component={Test}/>
           </App>
           <TestComponent path="/test">
 

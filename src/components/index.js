@@ -13,3 +13,6 @@ export BaseCarousel from './Common/BaseCarousel/BaseCarousel'; // 主页头部�
 export H2title from './Common/H2title/H2title'; // h2标题
 export HomeSixImage from './Common/HomeSixImage/HomeSixImage'; // 主页的6个图片展示
 //   主页的组件结束
+
+
+export Test from './OrderManagements/Test/Test'; // 已关闭的订单

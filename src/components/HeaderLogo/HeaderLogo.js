@@ -14,7 +14,7 @@ export default class HeaderLogo extends PureComponent {
 
 
   render() {
-    console.log("222222222")
+    //console.log("222222222")
     return (
       <div className="logo-box" onClick={this.handleOnclick}>
         <a>

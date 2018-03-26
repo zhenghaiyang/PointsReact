@@ -23,7 +23,11 @@ var config ={
   },
   resolve: {
       modules: [path.resolve(__dirname, 'node_modules')],//优化webpack文件搜索范围
-      extensions: ['.web.js', '.jsx', '.js', '.json']
+      extensions: ['.web.js', '.jsx', '.js', '.json'],
+      //webpack使用绝对路径配置
+      alias:{
+          '@':path.resolve(__dirname,'src')
+      }
   },
   module:{
     rules:[
